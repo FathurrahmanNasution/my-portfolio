@@ -669,7 +669,7 @@ const Portfolio = () => {
             <h2 style={styles.sectionTitle}>About Me</h2>
             <div style={styles.aboutText}>
               <p style={{marginBottom: '1.5rem'}}>
-                I am a fourth-semester Computer Science student at the University of North Sumatera with a passion for 
+                I am a fifth-semester Computer Science student at the University of North Sumatera with a passion for 
                 Web Programming and Cybersecurity. Over the past two years, I have built web applications using PHP, 
                 JavaScript, and PostgreSQL databases like Supabase and Neon.
               </p>
@@ -689,7 +689,7 @@ const Portfolio = () => {
                 <h3 style={styles.aboutCardTitle}>Education</h3>
                 <p style={{color: '#d1d5db', margin: 0}}>
                   <strong>University of North Sumatera</strong><br />
-                  Computer Science (4th Semester)<br />
+                  Computer Science (5th Semester)<br />
                   Focus: Web Programming & Cybersecurity
                 </p>
               </div>
