@@ -64,6 +64,7 @@ const Portfolio = () => {
       description: 'A full-stack web application where users can browse films by genre, submit ratings and reviews in each movie section.',
       technologies: ['HTML', 'CSS', 'JavaScript', 'PHP', 'Supabase', 'PostgreSQL'],
       github: 'https://github.com/susanjong/PROJEK-BUAT-WEB-FULLSTACK.git',
+      preview: 'https://link-to-demo-or-video',
       highlights: ['Backend endpoints in PHP for CRUD operations', 'Database schema design in Supabase', 'User authentication and review system']
     },
     {
@@ -71,6 +72,7 @@ const Portfolio = () => {
       description: 'A desktop Point of Sale system built in JavaFX, featuring inventory management, item lookup, cart operations, and multi-level access control.',
       technologies: ['Java', 'JavaFX', 'FXML', 'PostgreSQL'],
       github: 'https://github.com/susanjong/UTS_PBO_KELOMPOK5.git',
+      preview: 'https://link-to-demo-or-video',
       highlights: ['Overall architecture design', 'Multi-level access control (Admin/User)', 'Inventory management and receipt printing']
     },
     {
@@ -78,6 +80,7 @@ const Portfolio = () => {
       description: 'A machine learning pipeline that predicts personality types from survey data, including data exploration, preprocessing, model training, and evaluation.',
       technologies: ['Python', 'Google Colab', 'pandas', 'scikit-learn', 'SHAP', 'matplotlib'],
       github: 'https://colab.research.google.com/drive/1MRuP9flZkeyqKumGgcaH1NZr8ZPXWfm7?usp=sharing',
+      preview: 'https://link-to-demo-or-video',
       highlights: ['Multiple ML models comparison', 'SHAP for model interpretation', 'Comprehensive data analysis and visualization']
     }
   ];
@@ -94,19 +97,22 @@ const Portfolio = () => {
       title: 'University CTF 2024: Binary Badlands',
       institution: 'Hack The Box',
       date: 'December 2024',
-      achievement: 'Team rank: 588/1128, solved 6/49 challenges'
+      achievement: 'Team rank: 588/1128, solved 6/49 challenges',
+      preview: 'https://link-to-certificate'
     },
     {
       title: 'Cyber Strike Competition 1.0',
       institution: 'Satuan Siber TNI (Indonesian National Cyber Unit)',
       date: 'October 2024',
-      achievement: 'National-level Jeopardy style CTF participant'
+      achievement: 'National-level Jeopardy style CTF participant',
+       preview: 'https://link-to-certificate'
     },
     {
       title: 'Web Development Pathway',
       institution: 'Google Developer Groups on Campus USU',
       date: 'May 2025',
-      achievement: 'Certificate of Completion'
+      achievement: 'Certificate of Completion',
+      preview: 'https://link-to-certificate'
     }
   ];
 
@@ -756,16 +762,33 @@ const Portfolio = () => {
                   </div>
                 </div>
                 
-                <a
-                  href={project.github}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  style={styles.projectLink}
-                >
-                  <GithubIcon size={16} />
-                  <span>View Code</span>
-                  <ExternalLink size={16} />
-                </a>
+                <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>
+                  {/* GitHub */}
+                  <a
+                    href={project.github}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    style={styles.projectLink}
+                  >
+                    <GithubIcon size={16} />
+                    <span>View Code</span>
+                    <ExternalLink size={16} />
+                  </a>
+
+                  {/* Preview (only if exists) */}
+                  {project.preview && (
+                    <a
+                      href={project.preview}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      style={styles.projectLink}
+                    >
+                      <ExternalLink size={16} />
+                      <span>Preview</span>
+                    </a>
+                  )}
+                </div>
+
               </div>
             ))}
           </div>
@@ -808,9 +831,39 @@ const Portfolio = () => {
                   <Award size={24} style={styles.certIcon} />
                   <h3 style={styles.certTitle}>{cert.title}</h3>
                 </div>
-                <p style={styles.certDetail}><strong>Institution:</strong> {cert.institution}</p>
-                <p style={styles.certDetail}><strong>Date:</strong> {cert.date}</p>
-                <p style={styles.certAchievement}>{cert.achievement}</p>
+
+                <p style={styles.certDetail}>
+                  <strong>Institution:</strong> {cert.institution}
+                </p>
+                <p style={styles.certDetail}>
+                  <strong>Date:</strong> {cert.date}
+                </p>
+
+                {cert.achievement && (
+                  <p style={styles.certAchievement}>{cert.achievement}</p>
+                )}
+
+                {/* Preview / Certificate Link */}
+                {cert.preview && (
+                  <a
+                    href={cert.preview}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    style={{
+                      marginTop: '0.75rem',
+                      display: 'inline-flex',
+                      alignItems: 'center',
+                      gap: '0.5rem',
+                      color: '#60a5fa',
+                      fontSize: '0.9rem',
+                      textDecoration: 'none',
+                      fontWeight: 600
+                    }}
+                  >
+                    <ExternalLink size={16} />
+                    View Certificate
+                  </a>
+                )}
               </div>
             ))}
           </div>
