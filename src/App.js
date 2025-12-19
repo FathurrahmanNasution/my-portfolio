@@ -18,7 +18,7 @@ const GithubIcon = ({ size = 24 }) => (
   </svg>
 );
 
-const Portfolio = () => {
+const App = () => {
   const [activeSection, setActiveSection] = useState('home');
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isVisible, setIsVisible] = useState({});
@@ -64,7 +64,7 @@ const Portfolio = () => {
       description: 'A full-stack web application where users can browse films by genre, submit ratings and reviews in each movie section.',
       technologies: ['HTML', 'CSS', 'JavaScript', 'PHP', 'Supabase', 'PostgreSQL'],
       github: 'https://github.com/susanjong/PROJEK-BUAT-WEB-FULLSTACK.git',
-      preview: 'https://link-to-demo-or-video',
+      preview: 'https://project1.com',
       highlights: ['Backend endpoints in PHP for CRUD operations', 'Database schema design in Supabase', 'User authentication and review system']
     },
     {
@@ -72,7 +72,7 @@ const Portfolio = () => {
       description: 'A desktop Point of Sale system built in JavaFX, featuring inventory management, item lookup, cart operations, and multi-level access control.',
       technologies: ['Java', 'JavaFX', 'FXML', 'PostgreSQL'],
       github: 'https://github.com/susanjong/UTS_PBO_KELOMPOK5.git',
-      preview: 'https://link-to-demo-or-video',
+      preview: 'https://project2.com',
       highlights: ['Overall architecture design', 'Multi-level access control (Admin/User)', 'Inventory management and receipt printing']
     },
     {
@@ -80,7 +80,7 @@ const Portfolio = () => {
       description: 'A machine learning pipeline that predicts personality types from survey data, including data exploration, preprocessing, model training, and evaluation.',
       technologies: ['Python', 'Google Colab', 'pandas', 'scikit-learn', 'SHAP', 'matplotlib'],
       github: 'https://colab.research.google.com/drive/1MRuP9flZkeyqKumGgcaH1NZr8ZPXWfm7?usp=sharing',
-      preview: 'https://link-to-demo-or-video',
+      preview: 'https://project3.com',
       highlights: ['Multiple ML models comparison', 'SHAP for model interpretation', 'Comprehensive data analysis and visualization']
     }
   ];
@@ -98,527 +98,644 @@ const Portfolio = () => {
       institution: 'Hack The Box',
       date: 'December 2024',
       achievement: 'Team rank: 588/1128, solved 6/49 challenges',
-      preview: 'https://link-to-certificate'
+      preview: 'https://certification1.com'
     },
     {
       title: 'Cyber Strike Competition 1.0',
       institution: 'Satuan Siber TNI (Indonesian National Cyber Unit)',
       date: 'October 2024',
       achievement: 'National-level Jeopardy style CTF participant',
-       preview: 'https://link-to-certificate'
+      preview: 'https://certification2.com'
     },
     {
       title: 'Web Development Pathway',
       institution: 'Google Developer Groups on Campus USU',
       date: 'May 2025',
       achievement: 'Certificate of Completion',
-      preview: 'https://link-to-certificate'
+      preview: 'https://certification3.com'
     }
   ];
 
-  const styles = {
-    // Base styles
-    body: {
-      margin: 0,
-      fontFamily: "'Segoe UI', Tahoma, Geneva, Verdana, sans-serif",
-      backgroundColor: '#0f172a',
-      color: '#ffffff',
-      lineHeight: 1.6
-    },
-    
-    // Navigation
-    nav: {
-      position: 'fixed',
-      top: 0,
-      width: '100%',
-      backgroundColor: 'rgba(15, 23, 42, 0.95)',
-      backdropFilter: 'blur(10px)',
-      zIndex: 1000,
-      borderBottom: '1px solid #334155',
-      padding: '1rem 0'
-    },
-    navContainer: {
-      maxWidth: '1200px',
-      margin: '0 auto',
-      padding: '0 1.5rem',
-      display: 'flex',
-      justifyContent: 'space-between',
-      alignItems: 'center'
-    },
-    logo: {
-      fontSize: '1.5rem',
-      fontWeight: 'bold',
-      background: 'linear-gradient(135deg, #60a5fa, #a855f7)',
-      WebkitBackgroundClip: 'text',
-      WebkitTextFillColor: 'transparent',
-      backgroundClip: 'text'
-    },
-    navDesktop: {
-      display: 'flex',
-      gap: '2rem',
-      '@media (max-width: 768px)': {
-        display: 'none'
-      }
-    },
-    navButton: {
-      background: 'none',
-      border: 'none',
-      color: '#94a3b8',
-      cursor: 'pointer',
-      fontSize: '1rem',
-      transition: 'color 0.2s',
-      ':hover': {
-        color: '#60a5fa'
-      }
-    },
-    navButtonActive: {
-      color: '#60a5fa'
-    },
-    mobileMenuToggle: {
-      display: 'none',
-      background: 'none',
-      border: 'none',
-      color: '#ffffff',
-      cursor: 'pointer',
-      '@media (max-width: 768px)': {
-        display: 'block'
-      }
-    },
-    mobileMenu: {
-      display: 'none',
-      marginTop: '1rem',
-      paddingTop: '1rem',
-      borderTop: '1px solid #334155',
-      '@media (max-width: 768px)': {
-        display: isMenuOpen ? 'block' : 'none'
-      }
-    },
-    mobileMenuButton: {
-      display: 'block',
-      width: '100%',
-      textAlign: 'left',
-      padding: '0.5rem 0',
-      background: 'none',
-      border: 'none',
-      color: '#94a3b8',
-      cursor: 'pointer',
-      fontSize: '1rem',
-      transition: 'color 0.2s',
-      ':hover': {
-        color: '#60a5fa'
-      }
-    },
-
-    // Sections
-    section: {
-      padding: '5rem 0',
-      minHeight: '100vh',
-      display: 'flex',
-      alignItems: 'center'
-    },
-    sectionAlt: {
-      backgroundColor: '#1e293b'
-    },
-    container: {
-      maxWidth: '1200px',
-      margin: '0 auto',
-      padding: '0 1.5rem',
-      width: '100%'
-    },
-    
-    // Hero Section
-    hero: {
-      textAlign: 'center',
-      position: 'relative',
-      overflow: 'hidden'
-    },
-    heroBackground: {
-      position: 'absolute',
-      inset: 0,
-      background: 'linear-gradient(135deg, rgba(59, 130, 246, 0.1), rgba(168, 85, 247, 0.1))',
-      zIndex: 0
-    },
-    heroContent: {
-      position: 'relative',
-      zIndex: 1,
-      transition: 'all 1s',
-      transform: isVisible.home ? 'translateY(0)' : 'translateY(40px)',
-      opacity: isVisible.home ? 1 : 0
-    },
-    heroTitle: {
-      fontSize: '4rem',
-      fontWeight: 'bold',
-      marginBottom: '1.5rem',
-      background: 'linear-gradient(135deg, #60a5fa, #a855f7, #ec4899)',
-      WebkitBackgroundClip: 'text',
-      WebkitTextFillColor: 'transparent',
-      backgroundClip: 'text',
-      '@media (max-width: 768px)': {
-        fontSize: '2.5rem'
-      }
-    },
-    heroSubtitle: {
-      fontSize: '1.5rem',
-      marginBottom: '2rem',
-      color: '#cbd5e1',
-      '@media (max-width: 768px)': {
-        fontSize: '1.2rem'
-      }
-    },
-    heroDescription: {
-      fontSize: '1.1rem',
-      marginBottom: '3rem',
-      color: '#94a3b8',
-      maxWidth: '600px',
-      margin: '0 auto 3rem auto'
-    },
-    heroButtons: {
-      display: 'flex',
-      justifyContent: 'center',
-      gap: '1.5rem',
-      flexWrap: 'wrap'
-    },
-    buttonPrimary: {
-      padding: '0.75rem 2rem',
-      backgroundColor: '#2563eb',
-      color: 'white',
-      border: 'none',
-      borderRadius: '0.5rem',
-      fontSize: '1rem',
-      fontWeight: '600',
-      cursor: 'pointer',
-      transition: 'all 0.2s',
-      display: 'flex',
-      alignItems: 'center',
-      gap: '0.5rem',
-      ':hover': {
-        backgroundColor: '#1d4ed8',
-        transform: 'translateY(-2px)'
-      }
-    },
-    buttonSecondary: {
-      padding: '0.75rem 2rem',
-      backgroundColor: 'transparent',
-      color: 'white',
-      border: '2px solid #475569',
-      borderRadius: '0.5rem',
-      fontSize: '1rem',
-      fontWeight: '600',
-      cursor: 'pointer',
-      transition: 'all 0.2s',
-      ':hover': {
-        borderColor: '#60a5fa',
-        transform: 'translateY(-2px)'
-      }
-    },
-
-    // Content sections
-    sectionTitle: {
-      fontSize: '2.5rem',
-      fontWeight: 'bold',
-      textAlign: 'center',
-      marginBottom: '3rem',
-      background: 'linear-gradient(135deg, #60a5fa, #a855f7)',
-      WebkitBackgroundClip: 'text',
-      WebkitTextFillColor: 'transparent',
-      backgroundClip: 'text'
-    },
-    
-    // About section
-    aboutContent: {
-      maxWidth: '800px',
-      margin: '0 auto',
-      transition: 'all 1s',
-      transform: isVisible.about ? 'translateY(0)' : 'translateY(40px)',
-      opacity: isVisible.about ? 1 : 0
-    },
-    aboutText: {
-      backgroundColor: '#374151',
-      borderRadius: '0.5rem',
-      padding: '2rem',
-      marginBottom: '2rem',
-      fontSize: '1.1rem',
-      color: '#d1d5db',
-      lineHeight: 1.7
-    },
-    aboutGrid: {
-      display: 'grid',
-      gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
-      gap: '2rem',
-      marginTop: '2rem'
-    },
-    aboutCard: {
-      backgroundColor: '#374151',
-      borderRadius: '0.5rem',
-      padding: '1.5rem'
-    },
-    aboutCardTitle: {
-      fontSize: '1.25rem',
-      fontWeight: '600',
-      marginBottom: '1rem',
-      color: '#60a5fa'
-    },
-
-    // Projects section
-    projectsGrid: {
-      display: 'grid',
-      gridTemplateColumns: 'repeat(auto-fit, minmax(350px, 1fr))',
-      gap: '2rem',
-      transition: 'all 1s',
-      transform: isVisible.projects ? 'translateY(0)' : 'translateY(40px)',
-      opacity: isVisible.projects ? 1 : 0
-    },
-    projectCard: {
-      backgroundColor: '#1e293b',
-      borderRadius: '0.5rem',
-      padding: '1.5rem',
-      transition: 'all 0.3s',
-      ':hover': {
-        backgroundColor: '#334155',
-        transform: 'translateY(-5px)'
-      }
-    },
-    projectTitle: {
-      fontSize: '1.25rem',
-      fontWeight: '600',
-      marginBottom: '1rem',
-      color: '#60a5fa'
-    },
-    projectDescription: {
-      color: '#d1d5db',
-      marginBottom: '1rem',
-      lineHeight: 1.6
-    },
-    projectHighlights: {
-      marginBottom: '1rem'
-    },
-    projectHighlightTitle: {
-      fontWeight: '600',
-      marginBottom: '0.5rem',
-      color: '#e2e8f0'
-    },
-    projectHighlightList: {
-      listStyle: 'none',
-      padding: 0,
-      margin: 0
-    },
-    projectHighlightItem: {
-      display: 'flex',
-      alignItems: 'flex-start',
-      marginBottom: '0.5rem',
-      fontSize: '0.9rem',
-      color: '#94a3b8'
-    },
-    projectHighlightDot: {
-      width: '6px',
-      height: '6px',
-      backgroundColor: '#60a5fa',
-      borderRadius: '50%',
-      marginRight: '0.5rem',
-      marginTop: '0.5rem',
-      flexShrink: 0
-    },
-    projectTechnologies: {
-      marginBottom: '1rem'
-    },
-    projectTechTitle: {
-      fontWeight: '600',
-      marginBottom: '0.5rem',
-      color: '#e2e8f0'
-    },
-    projectTechList: {
-      display: 'flex',
-      flexWrap: 'wrap',
-      gap: '0.5rem'
-    },
-    projectTechTag: {
-      padding: '0.25rem 0.75rem',
-      backgroundColor: '#2563eb',
-      color: 'white',
-      fontSize: '0.875rem',
-      borderRadius: '9999px'
-    },
-    projectLink: {
-      display: 'inline-flex',
-      alignItems: 'center',
-      gap: '0.5rem',
-      color: '#60a5fa',
-      textDecoration: 'none',
-      transition: 'color 0.2s',
-      ':hover': {
-        color: '#93c5fd'
-      }
-    },
-
-    // Skills section
-    skillsGrid: {
-      display: 'grid',
-      gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))',
-      gap: '2rem',
-      transition: 'all 1s',
-      transform: isVisible.skills ? 'translateY(0)' : 'translateY(40px)',
-      opacity: isVisible.skills ? 1 : 0
-    },
-    skillCard: {
-      backgroundColor: '#374151',
-      borderRadius: '0.5rem',
-      padding: '1.5rem',
-      textAlign: 'center',
-      transition: 'all 0.3s',
-      ':hover': {
-        backgroundColor: '#4b5563',
-        transform: 'translateY(-5px)'
-      }
-    },
-    skillIcon: {
-      color: '#60a5fa',
-      marginBottom: '1rem'
-    },
-    skillTitle: {
-      fontSize: '1.1rem',
-      fontWeight: '600',
-      marginBottom: '1rem',
-      color: '#60a5fa'
-    },
-    skillList: {
-      listStyle: 'none',
-      padding: 0,
-      margin: 0
-    },
-    skillItem: {
-      color: '#d1d5db',
-      marginBottom: '0.5rem'
-    },
-
-    // Certifications section
-    certificationsGrid: {
-      display: 'grid',
-      gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
-      gap: '2rem',
-      transition: 'all 1s',
-      transform: isVisible.certifications ? 'translateY(0)' : 'translateY(40px)',
-      opacity: isVisible.certifications ? 1 : 0
-    },
-    certCard: {
-      backgroundColor: '#1e293b',
-      borderRadius: '0.5rem',
-      padding: '1.5rem',
-      transition: 'all 0.3s',
-      ':hover': {
-        backgroundColor: '#334155',
-        transform: 'translateY(-5px)'
-      }
-    },
-    certHeader: {
-      display: 'flex',
-      alignItems: 'center',
-      marginBottom: '1rem'
-    },
-    certIcon: {
-      color: '#fbbf24',
-      marginRight: '0.75rem'
-    },
-    certTitle: {
-      fontSize: '1.1rem',
-      fontWeight: '600',
-      color: '#60a5fa'
-    },
-    certDetail: {
-      color: '#d1d5db',
-      marginBottom: '0.5rem'
-    },
-    certAchievement: {
-      fontSize: '0.9rem',
-      color: '#94a3b8'
-    },
-
-    // Contact section
-    contactContent: {
-      maxWidth: '600px',
-      margin: '0 auto',
-      transition: 'all 1s',
-      transform: isVisible.contact ? 'translateY(0)' : 'translateY(40px)',
-      opacity: isVisible.contact ? 1 : 0
-    },
-    contactCard: {
-      backgroundColor: '#374151',
-      borderRadius: '0.5rem',
-      padding: '2rem'
-    },
-    contactDescription: {
-      fontSize: '1.1rem',
-      color: '#d1d5db',
-      marginBottom: '2rem',
-      textAlign: 'center'
-    },
-    contactGrid: {
-      display: 'grid',
-      gridTemplateColumns: 'repeat(auto-fit, minmax(150px, 1fr))',
-      gap: '1rem'
-    },
-    contactLink: {
-      display: 'flex',
-      alignItems: 'center',
-      justifyContent: 'center',
-      gap: '0.75rem',
-      padding: '1rem',
-      borderRadius: '0.5rem',
-      textDecoration: 'none',
-      color: 'white',
-      fontWeight: '600',
-      transition: 'all 0.2s',
-      ':hover': {
-        transform: 'translateY(-2px)'
-      }
-    },
-    contactEmail: {
-      backgroundColor: '#2563eb',
-      ':hover': {
-        backgroundColor: '#1d4ed8'
-      }
-    },
-    contactPhone: {
-      backgroundColor: '#059669',
-      ':hover': {
-        backgroundColor: '#047857'
-      }
-    },
-    contactGithub: {
-      backgroundColor: '#4b5563',
-      ':hover': {
-        backgroundColor: '#374151'
-      }
-    },
-
-    // Footer
-    footer: {
-      padding: '2rem 0',
-      backgroundColor: '#0f172a',
-      borderTop: '1px solid #334155',
-      textAlign: 'center',
-      color: '#94a3b8'
-    }
-  };
-
   return (
-    <div style={styles.body}>
+    <div className="portfolio">
+      <style>{`
+        * {
+          margin: 0;
+          padding: 0;
+          box-sizing: border-box;
+        }
+
+        html {
+          scroll-behavior: smooth;
+        }
+
+        .portfolio {
+          font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+          background-color: #0f172a;
+          color: #ffffff;
+          line-height: 1.6;
+        }
+
+        /* Navigation */
+        nav {
+          position: fixed;
+          top: 0;
+          width: 100%;
+          background-color: rgba(15, 23, 42, 0.95);
+          backdrop-filter: blur(10px);
+          z-index: 1000;
+          border-bottom: 1px solid #334155;
+          padding: 1rem 0;
+        }
+
+        .nav-container {
+          max-width: 1200px;
+          margin: 0 auto;
+          padding: 0 1.5rem;
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+        }
+
+        .logo {
+          font-size: 1.5rem;
+          font-weight: bold;
+          background: linear-gradient(135deg, #60a5fa, #a855f7);
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
+          background-clip: text;
+        }
+
+        .nav-desktop {
+          display: flex;
+          gap: 2rem;
+        }
+
+        .nav-button {
+          background: none;
+          border: none;
+          color: #94a3b8;
+          cursor: pointer;
+          font-size: 1rem;
+          transition: color 0.2s;
+          padding: 0.5rem;
+        }
+
+        .nav-button:hover {
+          color: #60a5fa;
+        }
+
+        .nav-button.active {
+          color: #60a5fa;
+        }
+
+        .mobile-menu-toggle {
+          display: none;
+          background: none;
+          border: none;
+          color: #ffffff;
+          cursor: pointer;
+          padding: 0.5rem;
+        }
+
+        .mobile-menu {
+          display: none;
+          padding: 1rem 1.5rem;
+        }
+
+        .mobile-menu.open {
+          display: block;
+        }
+
+        .mobile-menu-button {
+          display: block;
+          width: 100%;
+          text-align: left;
+          padding: 0.75rem 0;
+          background: none;
+          border: none;
+          color: #94a3b8;
+          cursor: pointer;
+          font-size: 1rem;
+          transition: color 0.2s;
+        }
+
+        .mobile-menu-button:hover {
+          color: #60a5fa;
+        }
+
+        /* Sections */
+        section {
+          padding: 5rem 0;
+          min-height: 100vh;
+          display: flex;
+          align-items: center;
+        }
+
+        .section-alt {
+          background-color: #1e293b;
+        }
+
+        .container {
+          max-width: 1200px;
+          margin: 0 auto;
+          padding: 0 1.5rem;
+          width: 100%;
+        }
+
+        /* Hero Section */
+        .hero {
+          text-align: center;
+          position: relative;
+          overflow: hidden;
+        }
+
+        .hero-background {
+          position: absolute;
+          inset: 0;
+          background: linear-gradient(135deg, rgba(59, 130, 246, 0.1), rgba(168, 85, 247, 0.1));
+          z-index: 0;
+        }
+
+        .hero-content {
+          position: relative;
+          z-index: 1;
+          transition: all 1s;
+          transform: translateY(40px);
+          opacity: 0;
+        }
+
+        .hero-content.fade-in {
+          transform: translateY(0);
+          opacity: 1;
+        }
+
+        .hero-title {
+          font-size: 4rem;
+          font-weight: bold;
+          margin-bottom: 1.5rem;
+          background: linear-gradient(135deg, #60a5fa, #a855f7, #ec4899);
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
+          background-clip: text;
+        }
+
+        .hero-subtitle {
+          font-size: 1.5rem;
+          margin-bottom: 2rem;
+          color: #cbd5e1;
+        }
+
+        .hero-description {
+          font-size: 1.1rem;
+          margin-bottom: 3rem;
+          color: #94a3b8;
+          max-width: 600px;
+          margin-left: auto;
+          margin-right: auto;
+        }
+
+        .hero-buttons {
+          display: flex;
+          justify-content: center;
+          gap: 1.5rem;
+          flex-wrap: wrap;
+        }
+
+        .button-primary, .button-secondary {
+          padding: 0.75rem 2rem;
+          border-radius: 0.5rem;
+          font-size: 1rem;
+          font-weight: 600;
+          cursor: pointer;
+          transition: all 0.2s;
+          display: inline-flex;
+          align-items: center;
+          gap: 0.5rem;
+          border: none;
+        }
+
+        .button-primary {
+          background-color: #2563eb;
+          color: white;
+        }
+
+        .button-primary:hover {
+          background-color: #1d4ed8;
+          transform: translateY(-2px);
+        }
+
+        .button-secondary {
+          background-color: transparent;
+          color: white;
+          border: 2px solid #475569;
+        }
+
+        .button-secondary:hover {
+          border-color: #60a5fa;
+          transform: translateY(-2px);
+        }
+
+        /* Content sections */
+        .section-title {
+          font-size: 2.5rem;
+          font-weight: bold;
+          text-align: center;
+          margin-bottom: 3rem;
+          background: linear-gradient(135deg, #60a5fa, #a855f7);
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
+          background-clip: text;
+        }
+
+        .fade-in-section {
+          transition: all 1s;
+          opacity: 0;
+          transform: translateY(40px);
+        }
+
+        .fade-in-section.visible {
+          opacity: 1;
+          transform: translateY(0);
+        }
+
+        /* About section */
+        .about-content {
+          max-width: 800px;
+          margin: 0 auto;
+        }
+
+        .about-text {
+          background-color: #374151;
+          border-radius: 0.5rem;
+          padding: 2rem;
+          margin-bottom: 2rem;
+          font-size: 1.1rem;
+          color: #d1d5db;
+          line-height: 1.7;
+        }
+
+        .about-text p {
+          margin-bottom: 1.5rem;
+        }
+
+        .about-text p:last-child {
+          margin-bottom: 0;
+        }
+
+        .about-grid {
+          display: grid;
+          grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+          gap: 2rem;
+          margin-top: 2rem;
+        }
+
+        .about-card {
+          background-color: #374151;
+          border-radius: 0.5rem;
+          padding: 1.5rem;
+        }
+
+        .about-card-title {
+          font-size: 1.25rem;
+          font-weight: 600;
+          margin-bottom: 1rem;
+          color: #60a5fa;
+        }
+
+        .about-card p {
+          color: #d1d5db;
+          margin: 0;
+        }
+
+        /* Projects section */
+        .projects-grid {
+          display: grid;
+          grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+          gap: 2rem;
+        }
+
+        .project-card {
+          background-color: #1e293b;
+          border-radius: 0.5rem;
+          padding: 1.5rem;
+          transition: all 0.3s;
+        }
+
+        .project-card:hover {
+          background-color: #334155;
+          transform: translateY(-5px);
+        }
+
+        .project-title {
+          font-size: 1.25rem;
+          font-weight: 600;
+          margin-bottom: 1rem;
+          color: #60a5fa;
+        }
+
+        .project-description {
+          color: #d1d5db;
+          margin-bottom: 1rem;
+          line-height: 1.6;
+        }
+
+        .project-highlights {
+          margin-bottom: 1rem;
+        }
+
+        .project-highlight-title {
+          font-weight: 600;
+          margin-bottom: 0.5rem;
+          color: #e2e8f0;
+        }
+
+        .project-highlight-list {
+          list-style: none;
+          padding: 0;
+          margin: 0;
+        }
+
+        .project-highlight-item {
+          display: flex;
+          align-items: flex-start;
+          margin-bottom: 0.5rem;
+          font-size: 0.9rem;
+          color: #94a3b8;
+        }
+
+        .project-highlight-dot {
+          width: 6px;
+          height: 6px;
+          background-color: #60a5fa;
+          border-radius: 50%;
+          margin-right: 0.5rem;
+          margin-top: 0.5rem;
+          flex-shrink: 0;
+        }
+
+        .project-technologies {
+          margin-bottom: 1rem;
+        }
+
+        .project-tech-title {
+          font-weight: 600;
+          margin-bottom: 0.5rem;
+          color: #e2e8f0;
+        }
+
+        .project-tech-list {
+          display: flex;
+          flex-wrap: wrap;
+          gap: 0.5rem;
+        }
+
+        .project-tech-tag {
+          padding: 0.25rem 0.75rem;
+          background-color: #2563eb;
+          color: white;
+          font-size: 0.875rem;
+          border-radius: 9999px;
+        }
+
+        .project-link {
+          display: inline-flex;
+          align-items: center;
+          gap: 0.5rem;
+          color: #60a5fa;
+          text-decoration: none;
+          transition: color 0.2s;
+        }
+
+        .project-link:hover {
+          color: #93c5fd;
+        }
+
+        /* Skills section */
+        .skills-grid {
+          display: grid;
+          grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+          gap: 2rem;
+        }
+
+        .skill-card {
+          background-color: #374151;
+          border-radius: 0.5rem;
+          padding: 1.5rem;
+          text-align: center;
+          transition: all 0.3s;
+        }
+
+        .skill-card:hover {
+          background-color: #4b5563;
+          transform: translateY(-5px);
+        }
+
+        .skill-icon {
+          color: #60a5fa;
+          margin-bottom: 1rem;
+          display: flex;
+          justify-content: center;
+        }
+
+        .skill-title {
+          font-size: 1.1rem;
+          font-weight: 600;
+          margin-bottom: 1rem;
+          color: #60a5fa;
+        }
+
+        .skill-list {
+          list-style: none;
+          padding: 0;
+          margin: 0;
+        }
+
+        .skill-item {
+          color: #d1d5db;
+          margin-bottom: 0.5rem;
+        }
+
+        /* Certifications section */
+        .certifications-grid {
+          display: grid;
+          grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+          gap: 2rem;
+        }
+
+        .cert-card {
+          background-color: #1e293b;
+          border-radius: 0.5rem;
+          padding: 1.5rem;
+          transition: all 0.3s;
+        }
+
+        .cert-card:hover {
+          background-color: #334155;
+          transform: translateY(-5px);
+        }
+
+        .cert-header {
+          display: flex;
+          align-items: center;
+          margin-bottom: 1rem;
+        }
+
+        .cert-icon {
+          color: #fbbf24;
+          margin-right: 0.75rem;
+        }
+
+        .cert-title {
+          font-size: 1.1rem;
+          font-weight: 600;
+          color: #60a5fa;
+        }
+
+        .cert-detail {
+          color: #d1d5db;
+          margin-bottom: 0.5rem;
+        }
+
+        .cert-achievement {
+          font-size: 0.9rem;
+          color: #94a3b8;
+        }
+
+        /* Contact section */
+        .contact-content {
+          max-width: 600px;
+          margin: 0 auto;
+        }
+
+        .contact-card {
+          background-color: #374151;
+          border-radius: 0.5rem;
+          padding: 2rem;
+        }
+
+        .contact-description {
+          font-size: 1.1rem;
+          color: #d1d5db;
+          margin-bottom: 2rem;
+          text-align: center;
+        }
+
+        .contact-grid {
+          display: grid;
+          grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+          gap: 1rem;
+        }
+
+        .contact-link {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          gap: 0.75rem;
+          padding: 1rem;
+          border-radius: 0.5rem;
+          text-decoration: none;
+          color: white;
+          font-weight: 600;
+          transition: all 0.2s;
+        }
+
+        .contact-link:hover {
+          transform: translateY(-2px);
+        }
+
+        .contact-github {
+          background-color: #4b5563;
+        }
+
+        .contact-github:hover {
+          background-color: #374151;
+        }
+
+        /* Footer */
+        footer {
+          padding: 2rem 0;
+          background-color: #0f172a;
+          border-top: 1px solid #334155;
+          text-align: center;
+          color: #94a3b8;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+          .nav-desktop {
+            display: none;
+          }
+
+          .mobile-menu-toggle {
+            display: block;
+          }
+
+          .hero-title {
+            font-size: 2.5rem;
+          }
+
+          .hero-subtitle {
+            font-size: 1.2rem;
+          }
+
+          .section-title {
+            font-size: 2rem;
+          }
+
+          section {
+            padding: 4rem 0;
+          }
+
+          .projects-grid,
+          .skills-grid,
+          .certifications-grid,
+          .about-grid {
+            grid-template-columns: 1fr;
+          }
+
+          .contact-grid {
+            grid-template-columns: 1fr;
+          }
+        }
+
+        @media (max-width: 480px) {
+          .hero-title {
+            font-size: 2rem;
+          }
+
+          .hero-subtitle {
+            font-size: 1rem;
+          }
+
+          .hero-description {
+            font-size: 1rem;
+          }
+
+          .container {
+            padding: 0 1rem;
+          }
+
+          .logo {
+            font-size: 1.2rem;
+          }
+        }
+      `}</style>
+
       {/* Navigation */}
-      <nav style={styles.nav}>
-        <div style={styles.navContainer}>
-          <div style={styles.logo}>
+      <nav>
+        <div className="nav-container">
+          <div className="logo">
             Fathurrahman Nasution
           </div>
           
           {/* Desktop Navigation */}
-          <div style={styles.navDesktop}>
+          <div className="nav-desktop">
             {navItems.map((item) => (
               <button
                 key={item.id}
                 onClick={() => scrollToSection(item.id)}
-                style={{
-                  ...styles.navButton,
-                  ...(activeSection === item.id ? styles.navButtonActive : {})
-                }}
+                className={`nav-button ${activeSection === item.id ? 'active' : ''}`}
               >
                 {item.label}
               </button>
@@ -627,7 +744,7 @@ const Portfolio = () => {
 
           {/* Mobile Navigation Toggle */}
           <button
-            style={styles.mobileMenuToggle}
+            className="mobile-menu-toggle"
             onClick={() => setIsMenuOpen(!isMenuOpen)}
           >
             {isMenuOpen ? <X /> : <Menu />}
@@ -635,47 +752,45 @@ const Portfolio = () => {
         </div>
 
         {/* Mobile Navigation Menu */}
-        {isMenuOpen && (
-          <div style={styles.mobileMenu}>
-            {navItems.map((item) => (
-              <button
-                key={item.id}
-                onClick={() => scrollToSection(item.id)}
-                style={styles.mobileMenuButton}
-              >
-                {item.label}
-              </button>
-            ))}
-          </div>
-        )}
+        <div className={`mobile-menu ${isMenuOpen ? 'open' : ''}`}>
+          {navItems.map((item) => (
+            <button
+              key={item.id}
+              onClick={() => scrollToSection(item.id)}
+              className="mobile-menu-button"
+            >
+              {item.label}
+            </button>
+          ))}
+        </div>
       </nav>
 
       {/* Hero Section */}
-      <section id="home" style={styles.section}>
-        <div style={styles.heroBackground}></div>
-        <div style={styles.container}>
-          <div style={styles.hero}>
-            <div style={styles.heroContent}>
-              <h1 style={styles.heroTitle}>
+      <section id="home">
+        <div className="hero-background"></div>
+        <div className="container">
+          <div className="hero">
+            <div className={`hero-content ${isVisible.home ? 'fade-in' : ''}`}>
+              <h1 className="hero-title">
                 Fathurrahman Nasution
               </h1>
-              <p style={styles.heroSubtitle}>
+              <p className="hero-subtitle">
                 Computer Science Student | Cybersecurity Enthusiast | Web Developer
               </p>
-              <p style={styles.heroDescription}>
+              <p className="hero-description">
                 Passionate about cybersecurity and web development, with experience in CTF challenges and full-stack applications
               </p>
-              <div style={styles.heroButtons}>
+              <div className="hero-buttons">
                 <button
                   onClick={() => scrollToSection('projects')}
-                  style={styles.buttonPrimary}
+                  className="button-primary"
                 >
                   <span>View Projects</span>
                   <ChevronRight size={16} />
                 </button>
                 <button
                   onClick={() => scrollToSection('contact')}
-                  style={styles.buttonSecondary}
+                  className="button-secondary"
                 >
                   Get In Touch
                 </button>
@@ -686,39 +801,39 @@ const Portfolio = () => {
       </section>
 
       {/* About Section */}
-      <section id="about" style={{...styles.section, ...styles.sectionAlt}}>
-        <div style={styles.container}>
-          <div style={styles.aboutContent}>
-            <h2 style={styles.sectionTitle}>About Me</h2>
-            <div style={styles.aboutText}>
-              <p style={{marginBottom: '1.5rem'}}>
+      <section id="about" className="section-alt">
+        <div className="container">
+          <div className={`about-content fade-in-section ${isVisible.about ? 'visible' : ''}`}>
+            <h2 className="section-title">About Me</h2>
+            <div className="about-text">
+              <p>
                 I am a fifth-semester Computer Science student at the University of North Sumatera with a passion for 
                 Web Programming and Cybersecurity. Over the past two years, I have built web applications using PHP, 
                 JavaScript, and PostgreSQL databases like Supabase and Neon.
               </p>
-              <p style={{marginBottom: '1.5rem'}}>
+              <p>
                 I have deepened my security skills through CTF challenges like Hack The Box's University CTF 2024 and 
                 the national-level Cyber Strike Competition 1.0. I'm fascinated by ethical hacking and vulnerability 
                 assessment, and I am committed to becoming a cybersecurity analyst who can proactively identify and 
                 remediate threats.
               </p>
-              <p style={{marginBottom: 0}}>
+              <p>
                 In the long term, I aim to attain industry certifications such as OSCP and contribute to Indonesia's 
                 digital safety by working on advanced penetration-testing teams.
               </p>
             </div>
-            <div style={styles.aboutGrid}>
-              <div style={styles.aboutCard}>
-                <h3 style={styles.aboutCardTitle}>Education</h3>
-                <p style={{color: '#d1d5db', margin: 0}}>
+            <div className="about-grid">
+              <div className="about-card">
+                <h3 className="about-card-title">Education</h3>
+                <p>
                   <strong>University of North Sumatera</strong><br />
                   Computer Science (5th Semester)<br />
                   Focus: Web Programming & Cybersecurity
                 </p>
               </div>
-              <div style={styles.aboutCard}>
-                <h3 style={styles.aboutCardTitle}>Career Goals</h3>
-                <p style={{color: '#d1d5db', margin: 0}}>
+              <div className="about-card">
+                <h3 className="about-card-title">Career Goals</h3>
+                <p>
                   Aspiring Cybersecurity Analyst<br />
                   Target: OSCP Certification<br />
                   Vision: Contributing to Indonesia's digital safety
@@ -730,65 +845,62 @@ const Portfolio = () => {
       </section>
 
       {/* Projects Section */}
-      <section id="projects" style={styles.section}>
-        <div style={styles.container}>
-          <h2 style={styles.sectionTitle}>Projects</h2>
-          <div style={styles.projectsGrid}>
+      <section id="projects">
+        <div className="container">
+          <h2 className="section-title">Projects</h2>
+          <div className={`projects-grid fade-in-section ${isVisible.projects ? 'visible' : ''}`}>
             {projects.map((project, index) => (
-              <div key={index} style={styles.projectCard}>
-                <h3 style={styles.projectTitle}>{project.title}</h3>
-                <p style={styles.projectDescription}>{project.description}</p>
+              <div key={index} className="project-card">
+                <h3 className="project-title">{project.title}</h3>
+                <p className="project-description">{project.description}</p>
                 
-                <div style={styles.projectHighlights}>
-                  <h4 style={styles.projectHighlightTitle}>Key Highlights:</h4>
-                  <ul style={styles.projectHighlightList}>
+                <div className="project-highlights">
+                  <h4 className="project-highlight-title">Key Highlights:</h4>
+                  <ul className="project-highlight-list">
                     {project.highlights.map((highlight, i) => (
-                      <li key={i} style={styles.projectHighlightItem}>
-                        <span style={styles.projectHighlightDot}></span>
+                      <li key={i} className="project-highlight-item">
+                        <span className="project-highlight-dot"></span>
                         {highlight}
                       </li>
                     ))}
                   </ul>
                 </div>
                 
-                <div style={styles.projectTechnologies}>
-                  <h4 style={styles.projectTechTitle}>Technologies:</h4>
-                  <div style={styles.projectTechList}>
+                <div className="project-technologies">
+                  <h4 className="project-tech-title">Technologies:</h4>
+                  <div className="project-tech-list">
                     {project.technologies.map((tech, i) => (
-                      <span key={i} style={styles.projectTechTag}>
+                      <span key={i} className="project-tech-tag">
                         {tech}
                       </span>
                     ))}
                   </div>
                 </div>
                 
-                <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>
-                  {/* GitHub */}
+                <div style={{ display: 'flex', gap: '0.75rem', alignItems: 'center', marginTop: '0.75rem', flexWrap: 'wrap' }}>
                   <a
                     href={project.github}
                     target="_blank"
                     rel="noopener noreferrer"
-                    style={styles.projectLink}
+                    className="project-link"
                   >
                     <GithubIcon size={16} />
                     <span>View Code</span>
                     <ExternalLink size={16} />
                   </a>
 
-                  {/* Preview (only if exists) */}
                   {project.preview && (
                     <a
                       href={project.preview}
                       target="_blank"
                       rel="noopener noreferrer"
-                      style={styles.projectLink}
+                      className="project-link"
                     >
                       <ExternalLink size={16} />
                       <span>Preview</span>
                     </a>
                   )}
                 </div>
-
               </div>
             ))}
           </div>
@@ -796,21 +908,21 @@ const Portfolio = () => {
       </section>
 
       {/* Skills Section */}
-      <section id="skills" style={{...styles.section, ...styles.sectionAlt}}>
-        <div style={styles.container}>
-          <h2 style={styles.sectionTitle}>Skills & Expertise</h2>
-          <div style={styles.skillsGrid}>
+      <section id="skills" className="section-alt">
+        <div className="container">
+          <h2 className="section-title">Skills & Expertise</h2>
+          <div className={`skills-grid fade-in-section ${isVisible.skills ? 'visible' : ''}`}>
             {skills.map((skillCategory, index) => {
               const IconComponent = skillCategory.icon;
               return (
-                <div key={index} style={styles.skillCard}>
-                  <div style={styles.skillIcon}>
+                <div key={index} className="skill-card">
+                  <div className="skill-icon">
                     <IconComponent size={48} />
                   </div>
-                  <h3 style={styles.skillTitle}>{skillCategory.category}</h3>
-                  <ul style={styles.skillList}>
+                  <h3 className="skill-title">{skillCategory.category}</h3>
+                  <ul className="skill-list">
                     {skillCategory.items.map((skill, i) => (
-                      <li key={i} style={styles.skillItem}>{skill}</li>
+                      <li key={i} className="skill-item">{skill}</li>
                     ))}
                   </ul>
                 </div>
@@ -821,47 +933,30 @@ const Portfolio = () => {
       </section>
 
       {/* Certifications Section */}
-      <section id="certifications" style={styles.section}>
-        <div style={styles.container}>
-          <h2 style={styles.sectionTitle}>Certifications & Achievements</h2>
-          <div style={styles.certificationsGrid}>
+      <section id="certifications">
+        <div className="container">
+          <h2 className="section-title">Certifications & Achievements</h2>
+          <div className={`certifications-grid fade-in-section ${isVisible.certifications ? 'visible' : ''}`}>
             {certifications.map((cert, index) => (
-              <div key={index} style={styles.certCard}>
-                <div style={styles.certHeader}>
-                  <Award size={24} style={styles.certIcon} />
-                  <h3 style={styles.certTitle}>{cert.title}</h3>
+              <div key={index} className="cert-card">
+                <div className="cert-header">
+                  <Award size={24} className="cert-icon" />
+                  <h3 className="cert-title">{cert.title}</h3>
                 </div>
+                <p className="cert-detail"><strong>Institution:</strong> {cert.institution}</p>
+                <p className="cert-detail"><strong>Date:</strong> {cert.date}</p>
+                <p className="cert-achievement">{cert.achievement}</p>
 
-                <p style={styles.certDetail}>
-                  <strong>Institution:</strong> {cert.institution}
-                </p>
-                <p style={styles.certDetail}>
-                  <strong>Date:</strong> {cert.date}
-                </p>
-
-                {cert.achievement && (
-                  <p style={styles.certAchievement}>{cert.achievement}</p>
-                )}
-
-                {/* Preview / Certificate Link */}
                 {cert.preview && (
                   <a
                     href={cert.preview}
                     target="_blank"
                     rel="noopener noreferrer"
-                    style={{
-                      marginTop: '0.75rem',
-                      display: 'inline-flex',
-                      alignItems: 'center',
-                      gap: '0.5rem',
-                      color: '#60a5fa',
-                      fontSize: '0.9rem',
-                      textDecoration: 'none',
-                      fontWeight: 600
-                    }}
+                    className="project-link"
+                    style={{ marginTop: '0.5rem', display: 'inline-flex' }}
                   >
                     <ExternalLink size={16} />
-                    View Certificate
+                    <span>View Certificate</span>
                   </a>
                 )}
               </div>
@@ -871,20 +966,20 @@ const Portfolio = () => {
       </section>
 
       {/* Contact Section */}
-      <section id="contact" style={{...styles.section, ...styles.sectionAlt}}>
-        <div style={styles.container}>
-          <h2 style={styles.sectionTitle}>Get In Touch</h2>
-          <div style={styles.contactContent}>
-            <div style={styles.contactCard}>
-              <p style={styles.contactDescription}>
+      <section id="contact" className="section-alt">
+        <div className="container">
+          <h2 className="section-title">Get In Touch</h2>
+          <div className={`contact-content fade-in-section ${isVisible.contact ? 'visible' : ''}`}>
+            <div className="contact-card">
+              <p className="contact-description">
                 I'm always open to discussing cybersecurity, web development, or potential collaboration opportunities.
               </p>
-              <div style={styles.contactGrid}>
+              <div className="contact-grid">
                 <a
                   href="https://github.com/FathurrahmanNasution"
                   target="_blank"
                   rel="noopener noreferrer"
-                  style={{...styles.contactLink, ...styles.contactGithub}}
+                  className="contact-link contact-github"
                 >
                   <GithubIcon size={20} />
                   <span>GitHub</span>
@@ -896,13 +991,13 @@ const Portfolio = () => {
       </section>
 
       {/* Footer */}
-      <footer style={styles.footer}>
-        <div style={styles.container}>
-          <p>© 2025 Fathurrahman Nasution. Built with React and CSS.</p>
+      <footer>
+        <div className="container">
+          <p>© 2025 Fathurrahman Nasution. Built with React.</p>
         </div>
       </footer>
     </div>
   );
 };
 
-export default Portfolio;
+export default App;
