@@ -64,7 +64,7 @@ const App = () => {
       description: 'A full-stack web application where users can browse films by genre, submit ratings and reviews in each movie section.',
       technologies: ['HTML', 'CSS', 'JavaScript', 'PHP', 'Supabase', 'PostgreSQL'],
       github: 'https://github.com/susanjong/PROJEK-BUAT-WEB-FULLSTACK.git',
-      preview: 'https://project1.com',
+      preview: 'demoweb.png',
       highlights: ['Backend endpoints in PHP for CRUD operations', 'Database schema design in Supabase', 'User authentication and review system']
     },
     {
@@ -72,7 +72,7 @@ const App = () => {
       description: 'A desktop Point of Sale system built in JavaFX, featuring inventory management, item lookup, cart operations, and multi-level access control.',
       technologies: ['Java', 'JavaFX', 'FXML', 'PostgreSQL'],
       github: 'https://github.com/susanjong/UTS_PBO_KELOMPOK5.git',
-      preview: 'https://project2.com',
+      preview: 'demoPOS.png',
       highlights: ['Overall architecture design', 'Multi-level access control (Admin/User)', 'Inventory management and receipt printing']
     },
     {
@@ -80,16 +80,16 @@ const App = () => {
       description: 'A machine learning pipeline that predicts personality types from survey data, including data exploration, preprocessing, model training, and evaluation.',
       technologies: ['Python', 'Google Colab', 'pandas', 'scikit-learn', 'SHAP', 'matplotlib'],
       github: 'https://colab.research.google.com/drive/1MRuP9flZkeyqKumGgcaH1NZr8ZPXWfm7?usp=sharing',
-      preview: 'https://project3.com',
+      preview: 'demoml.png',
       highlights: ['Multiple ML models comparison', 'SHAP for model interpretation', 'Comprehensive data analysis and visualization']
     }
   ];
 
   const skills = [
-    { category: 'Programming Languages', items: ['PHP', 'JavaScript', 'Java', 'Python'], icon: Code },
+    { category: 'Programming Languages', items: ['PHP', 'JavaScript', 'Java', 'Python', 'Dart'], icon: Code },
     { category: 'Cybersecurity', items: ['Ethical Hacking', 'CTF Challenges', 'Vulnerability Assessment', 'Penetration Testing'], icon: Shield },
     { category: 'Databases', items: ['PostgreSQL', 'Supabase', 'Neon'], icon: Database },
-    { category: 'Frameworks & Tools', items: ['JavaFX', 'React', 'Google Colab'], icon: User }
+    { category: 'Frameworks & Tools', items: ['JavaFX', 'React','Flutter', 'Google Colab'], icon: User }
   ];
 
   const certifications = [
@@ -98,21 +98,21 @@ const App = () => {
       institution: 'Hack The Box',
       date: 'December 2024',
       achievement: 'Team rank: 588/1128, solved 6/49 challenges',
-      preview: 'https://certification1.com'
+      preview: 'ctf2024.png'
     },
     {
       title: 'Cyber Strike Competition 1.0',
       institution: 'Satuan Siber TNI (Indonesian National Cyber Unit)',
       date: 'October 2024',
       achievement: 'National-level Jeopardy style CTF participant',
-      preview: 'https://certification2.com'
+      preview: 'satsibertni.png'
     },
     {
       title: 'Web Development Pathway',
       institution: 'Google Developer Groups on Campus USU',
       date: 'May 2025',
       achievement: 'Certificate of Completion',
-      preview: 'https://certification3.com'
+      preview: 'gdgoccert.png'
     }
   ];
 
