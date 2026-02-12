@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Mail, Phone, ExternalLink, Award, Code, Shield, Database, User, Menu, X, ChevronRight } from 'lucide-react';
+import { ExternalLink, Award, Code, Shield, Database, User, Menu, X, ChevronRight } from 'lucide-react';
 
 // Custom GitHub icon component (since Github is deprecated in lucide-react)
 const GithubIcon = ({ size = 24 }) => (
